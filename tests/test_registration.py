@@ -49,7 +49,7 @@ def test_authenticate_user_success(setup_database):
     add_user('authuser', 'authuser@example.com', 'securepass')
     assert authenticate_user('authuser', 'securepass') is True, "Должна пройти успешная аутентификация."
 
-def test_authenticate_user_notsuccess(setup_database)
+def test_authenticate_user_notsuccess(setup_database):
     """Аутентификация несуществующего пользователя"""
     add_user('authuser', 'authuser@example.com', 'securepass')
     assert authenticate_user('authpeople', 'securepass') is False, "Аутентификация несуществующего пользователя должна вернуть False."
@@ -59,7 +59,6 @@ def test_authenticate_user_wrong_password(setup_database):
     add_user('authfail', 'authfail@example.com', 'correctpass')
     assert authenticate_user('authfail', 'wrongpass') is False, "Аутентификация с неправильным паролем должна вернуть False."
 
-def test_
 """
 Тест добавления пользователя с существующим логином.+
 Тест успешной аутентификации пользователя.+
